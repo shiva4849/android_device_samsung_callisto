@@ -142,7 +142,7 @@ $ . build/envsetup.sh && brunch callisto
 
 * Flash your freshly build Zip
 
-$ out/target/samsung/callisto/cm10.1-Unofficial-Callisto.zip
+source/out/target/samsung/callisto/cm10.1-Unofficial-Callisto.zip
 
 
 _____________________________________________________________
