@@ -27,7 +27,7 @@ for FILE in `cat files`; do
     if [ ! -d $BASE/$DIR ]; then
         mkdir -p $BASE/$DIR
     fi
-    cp ~/callisto/cm-9-third-alpha-UNOFFICIAL-callisto/system/$FILE $BASE/$FILE
+    cp ~/cm9/system/$FILE $BASE/$FILE
     
 done
 
