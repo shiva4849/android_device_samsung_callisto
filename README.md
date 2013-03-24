@@ -1,7 +1,7 @@
-android_device_samsung_tass
+android_device_samsung_callisto
 ==========================
 
-Device configuration for Samsung tass GT-S5570
+Device configuration for Samsung tass GT-I5510
 
 Getting Started
 ---------------
@@ -19,8 +19,7 @@ Then to sync up:
 
 Build your device:
 
-    source build/envsetup.sh
-    brunch tass
+    . source build/envsetup.sh && brunch callisto
 
 Flash ZIP:
 
