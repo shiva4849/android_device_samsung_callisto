@@ -1,7 +1,7 @@
 android_device_samsung_callisto
 ==========================
 
-Device configuration for Samsung tass GT-I5510
+Device configuration for Samsung callisto GT-I5510
 
 Getting Started
 ---------------
