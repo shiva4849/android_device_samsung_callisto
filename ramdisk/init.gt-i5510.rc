@@ -4,6 +4,18 @@ on init
     insmod /lib/modules/fsr_stl.ko
     insmod /lib/modules/sec_param.ko
 
+on early-init
+    # sdcard
+    mkdir /storage 0775 system sdcard_r
+    mkdir /storage/sdcard0 0000 system system
+    symlink /storage/sdcard0 /mnt/sdcard
+    symlink /storage/sdcard0 /sdcard
+    export EXTERNAL_STORAGE /storage/sdcard0
+
+    # sd-ext
+    mkdir /sd-ext 0771 system system
+    export SD_EXT_DIRECTORY /sd-ext
+
 on fs
     mount ext4 /dev/block/stl12 /system ro wait noatime nodiratime noauto_da_alloc
     mount ext4 /dev/block/stl13 /data wait nosuid nodev noatime nodiratime noauto_da_alloc
@@ -32,7 +44,7 @@ on boot
     write /sys/devices/system/cpu/cpu0/cpufreq/ondemand/up_threshold 95
     write /sys/devices/system/cpu/cpu0/cpufreq/ondemand/down_differential 3
     write /sys/devices/system/cpu/cpu0/cpufreq/ondemand/sampling_rate 50000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 122880
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 245760
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 600000
 
 # Setup bluetooth
@@ -165,4 +177,3 @@ service get_macaddrs /system/bin/get_macaddrs
 
 on property:init.svc.ril-daemon=running
     start get_macaddrs
-
